@@ -14,3 +14,8 @@ class Ball(Toy, ABC):
     def __str__(self):
         return super().__str__() + ", type of ball = {}]".format(
             self.type_of_ball)
+
+
+if __name__ == '__main__':
+    ball = Ball(BallType.Basketball, 20, 12, Size.Large)
+    print(ball)

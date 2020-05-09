@@ -1,9 +1,7 @@
-from abc import ABC
-
 from main.ua.lviv.iot.models.Size import Size
 
 
-class Toy(ABC):
+class Toy:
     def __init__(self, price_in_UAH, age_group, size: Size):
         super().__init__()
         self.price_in_UAH = price_in_UAH

@@ -11,8 +11,11 @@ class ToyManagerUtils:
     def sort_by_price(toys: List[Toy], sort_type: SortType):
         """
         return sorted object by price
-        >>> print(ToyManagerUtils.sort_by_price(toys,SortType.Ascending)[2])
+        >>> for i in ToyManagerUtils.sort_by_price(toys,SortType.Ascending): print(i)
         [price in UAH = 400, age group = 7, size = Size.Small, color = yellow, door count = 4, length in mm = 150, material = Metal]
+        [price in UAH = 400, age group = 7, size = Size.Small, color = yellow, door count = 4, length in mm = 150, material = Metal]
+        [price in UAH = 450, age group = 8, size = Size.Small, color = black, door count = 4, length in mm = 150, material = Metal]
+        [price in UAH = 460, age group = 8, size = Size.Large, color = yellow, door count = 4, length in mm = 150, material = Metal]
        """
         toys.sort(key=lambda toy: toy.price_in_UAH, reverse=sort_type.value)
         return toys
@@ -22,7 +25,7 @@ class ToyManagerUtils:
         """
         return sorted object by age group
         >>> print(ToyManagerUtils.sort_by_age_group(toys,SortType.Ascending)[2])
-        [price in UAH = 400, age group = 7, size = Size.Small, color = yellow, door count = 4, length in mm = 150, material = Metal]
+        [price in UAH = 450, age group = 8, size = Size.Small, color = black, door count = 4, length in mm = 150, material = Metal]
         """
         toys.sort(key=lambda toy: toy.age_group, reverse=sort_type.value)
         return toys
@@ -32,7 +35,7 @@ class ToyManagerUtils:
         """
         return sorted object by size
         >>> print(ToyManagerUtils.sort_by_size(toys,SortType.Ascending)[0])
-        [price in UAH = 450, age group = 8, size = Size.Small, color = black, door count = 4, length in mm = 150, material = Metal]
+        [price in UAH = 460, age group = 8, size = Size.Large, color = yellow, door count = 4, length in mm = 150, material = Metal]
         """
         toys.sort(key=lambda toy: str(toy.size), reverse=sort_type.value)
         return toys
